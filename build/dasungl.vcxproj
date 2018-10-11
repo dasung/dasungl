@@ -85,7 +85,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\ext\include\glad.c" />
-    <ClCompile Include="Main.cpp" />
+    <ClCompile Include="..\src\Main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h" />

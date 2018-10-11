@@ -21,7 +21,7 @@
     <ClCompile Include="..\ext\include\glad.c">
       <Filter>Source Files\GLAD</Filter>
     </ClCompile>
-    <ClCompile Include="Main.cpp">
+    <ClCompile Include="..\src\Main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
