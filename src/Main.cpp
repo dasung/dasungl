@@ -1,7 +1,19 @@
 #include "stdafx.h"
-#include <glad/glad.h>
+#include "GlfwWindow.h"
 
-int _tmain( int argc, _TCHAR* argv[] )
+int main()
 {
-	return 0;
+	GlfwWindow obj;
+
+	// Window object is crated using GLFW
+	GLFWwindow* windowInst = obj.CreateWindowObject();
+
+	// Glad: load all OpenGL function pointers
+	obj.LoadGLFunctionPointers();
+
+	// Call render loop
+	obj.RenderFun( windowInst );
+
+	// Clear all allocated GLFW resources
+	obj.GLTerminate();
 }
