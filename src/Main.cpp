@@ -3,17 +3,17 @@
 
 int main()
 {
-	GlfwWindow obj;
+	DGLWindow *pDGLWindowInst = DGLWindow::GetDGLWindowInstance();
 
 	// Window object is crated using GLFW
-	GLFWwindow* windowInst = obj.CreateWindowObject();
+	pDGLWindowInst->CreateWindowGLFW();
 
 	// Glad: load all OpenGL function pointers
-	obj.LoadGLFunctionPointers();
+	pDGLWindowInst->LoadGLFunctionPointers();
 
 	// Call render loop
-	obj.RenderFun( windowInst );
+	pDGLWindowInst->RenderFun();
 
 	// Clear all allocated GLFW resources
-	obj.GLTerminate();
+	pDGLWindowInst->Destroy();
 }
