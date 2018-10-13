@@ -89,7 +89,7 @@ void DGLWindow::RenderFun( int shaderProgram, int VAO )
         processInput();
 
         //  clear the screen with a color of our choice
-        glClearColor( 0.5f, 0.3f, 0.1f, 1.0f );
+        glClearColor( 0.2f, 0.3f, 0.3f, 1.0f );
 		// Clear the color buffer and filled with color configured by glClearColor
         glClear( GL_COLOR_BUFFER_BIT );
 
@@ -97,7 +97,7 @@ void DGLWindow::RenderFun( int shaderProgram, int VAO )
         glUseProgram(shaderProgram);
         glBindVertexArray(VAO); // seeing as we only have a single VAO there's no need to bind it every time, but we'll do so to keep things a bit more organized
         //glDrawArrays(GL_TRIANGLES, 0, 6);
-        glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
+        glDrawArrays(GL_TRIANGLES, 0, 3);
 
         // Swap front buffer and back buffer ( Double buffer rendering )
         glfwSwapBuffers( m_pGlfwWindowPtr );
