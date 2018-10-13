@@ -89,6 +89,8 @@
     <ClCompile Include="..\src\Main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\src\DGLShader.h" />
+    <ClInclude Include="..\src\DGLVertex.h" />
     <ClInclude Include="..\src\DGLWindow.h" />
     <ClInclude Include="..\src\stdafx.h" />
   </ItemGroup>

@@ -80,7 +80,7 @@ void DGLWindow::Destroy()
 }
 
 
-void DGLWindow::RenderFun()
+void DGLWindow::RenderFun( int shaderProgram, int VAO )
 {
     // render loop
     while ( !glfwWindowShouldClose( m_pGlfwWindowPtr ) )
@@ -90,13 +90,17 @@ void DGLWindow::RenderFun()
 
         //  clear the screen with a color of our choice
         glClearColor( 0.5f, 0.3f, 0.1f, 1.0f );
-
 		// Clear the color buffer and filled with color configured by glClearColor
         glClear( GL_COLOR_BUFFER_BIT );
 
+        // draw our first triangle
+        glUseProgram(shaderProgram);
+        glBindVertexArray(VAO); // seeing as we only have a single VAO there's no need to bind it every time, but we'll do so to keep things a bit more organized
+        //glDrawArrays(GL_TRIANGLES, 0, 6);
+        glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
+
         // Swap front buffer and back buffer ( Double buffer rendering )
         glfwSwapBuffers( m_pGlfwWindowPtr );
-
 		// Checks if any Keyboard / Mouse events are triggered
         glfwPollEvents();
     }

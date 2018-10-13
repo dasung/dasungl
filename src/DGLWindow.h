@@ -14,7 +14,7 @@ public:
 	static DGLWindow* GetDGLWindowInstance();
 	void CreateWindowGLFW();
 	void LoadGLFunctionPointers();
-	void RenderFun();
+	void RenderFun( int shaderProgram, int VAO );
 	void Destroy();
 
 private:
