@@ -1,5 +1,5 @@
 #include "stdafx.h"
-#include "GlfwWindow.h"
+#include "DGLWindow.h"
 
 int main()
 {

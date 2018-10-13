@@ -1,4 +1,4 @@
-#include "GlfwWindow.h"
+#include "DGLWindow.h"
 
 DGLWindow* DGLWindow::m_pDGLWindowPtr = NULL;
 GLFWwindow* DGLWindow::m_pGlfwWindowPtr = NULL;
