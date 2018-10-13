@@ -92,6 +92,9 @@
     <ClInclude Include="..\src\DGLWindow.h" />
     <ClInclude Include="..\src\stdafx.h" />
   </ItemGroup>
+  <ItemGroup>
+    <Text Include="..\docs\About_grapics_pipline_shaders.txt" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

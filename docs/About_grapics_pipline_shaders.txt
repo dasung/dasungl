@@ -1,0 +1,53 @@
+Graphics Pipeline:
+	[1] Process of transforming 3D coordinates into 2D coordinates that fit to your screen.
+	[2] Transform 2D coordinate into actual colored pixels
+
+Steps of Graphics Pipeline:
+Above two parts are executed in several steps. That is,
+	1. Vertex Shader (*)
+	2. Shape Assembly
+	3. Geometry Shader
+	4. Rasterization
+	5. Fragment Shader (*)
+	6. Test and Blending
+
+All those steps are run in parallel in thousands of small processing cores as small programs.
+These small programs are called shaders.
+
+Vertex and Fragment shader are configurable by developers to write own shader and replace existing shader.
+Shaders are written in the OpenGL Shading Language (GLSL).
+
+[Vertex Data (3D pos, color)]
+	Input to Graphic Pipeline
+	List of 3D coordinates that should form a TRAINGLE.
+
+[Vertex Shader]
+	Transform 3D->2D
+
+[Primitive Assembly]
+	Get all vertices from [Vertex Shader]
+	Assemble all points in the primitive shape given (TRAINGLE).
+		 using input hint: GL_POINTS, GL_TRIANGLES and GL_LINE_STRIP.
+
+[Geometry Shader]
+	Generate other primitive shapes (TRAINGLE 2) by taking [Primitive Assembly] output.
+
+[Rasterization]
+	Maps the resulting primitive(s) to the final screen.
+	Creates fragments for the fragment shader to use.
+	Clipping: Discards all fragments that are outside your view for increasing performance.
+
+[Fragment Shader]
+	Calculate the final color of a pixel.
+		-  lights, shadows, color of the light
+	Apply all the advanced OpenGL effects.
+
+[Test and Blending]
+	Checks the corresponding depth of fragments.
+	Check if the resulting fragment is in front or behind other objects and discard.
+	Checks for alpha values (alpha values define the opacity of an object) and blends the objects accordingly.
+	Even if a pixel output color is calculated in the fragment shader, the final pixel color could still be something entirely different.
+
+In Modern OpenGL we are required to define at least a vertex and fragment shader of our own.
+There are no default vertex/fragment shaders on the GPU.
+For this reason it is often quite difficult to start learning Modern OpenGL since a great deal of knowledge is required before being able to render your first triangle.

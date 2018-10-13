@@ -16,6 +16,9 @@
     <Filter Include="Source Files\GLAD">
       <UniqueIdentifier>{4dc907c4-03b8-4f60-959f-fbd3dcaf88c3}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Docs">
+      <UniqueIdentifier>{59740cbf-f135-4de0-b64d-7bfdb4a3459b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\ext\include\glad.c">
@@ -35,5 +38,10 @@
     <ClInclude Include="..\src\DGLWindow.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="..\docs\About_grapics_pipline_shaders.txt">
+      <Filter>Docs</Filter>
+    </Text>
   </ItemGroup>
 </Project>
