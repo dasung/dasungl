@@ -86,12 +86,15 @@
   <ItemGroup>
     <ClCompile Include="..\ext\include\glad.c" />
     <ClCompile Include="..\src\DGLWindow.cpp" />
+    <ClCompile Include="..\src\DLstdc.cpp" />
     <ClCompile Include="..\src\Main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\src\DGLShader.h" />
     <ClInclude Include="..\src\DGLVertex.h" />
     <ClInclude Include="..\src\DGLWindow.h" />
+    <ClInclude Include="..\src\DLtypes.h" />
+    <ClInclude Include="..\src\DLstdc.h" />
     <ClInclude Include="..\src\stdafx.h" />
   </ItemGroup>
   <ItemGroup>
