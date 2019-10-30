@@ -9,9 +9,10 @@ const char *vertexShaderSource = "#version 330 core\n"
 	"}\0";
 const char *fragmentShaderSource = "#version 330 core\n"
 	"out vec4 FragColor;\n"
+	"uniform vec4 ourColor;\n"
 	"void main()\n"
 	"{\n"
-	"   FragColor = vec4(1.0f, 0.5f, 0.2f, 1.0f);\n"
+	"   FragColor = ourColor;\n"
 	"}\n\0";
 
 // build and compile our shader program
@@ -37,7 +38,7 @@ DGLShader::~DGLShader()
 }
 
 
-int DGLShader::GenerateFragmentShader()
+int DGLShader::GenerateVertexShader()
 {
 	int vertexShader = glCreateShader(GL_VERTEX_SHADER);
 	glShaderSource(vertexShader, 1, &vertexShaderSource, NULL);
@@ -57,8 +58,8 @@ int DGLShader::GenerateFragmentShader()
 	return vertexShader;
 }
 
-
-int DGLShader::GenerateVertexShader()
+// GenerateVertexShader  
+int DGLShader::GenerateFragmentShader()
 {
 	int fragmentShader = glCreateShader(GL_FRAGMENT_SHADER);
 	glShaderSource(fragmentShader, 1, &fragmentShaderSource, NULL);
