@@ -199,6 +199,3 @@ $RECYCLE.BIN/
 *.msi
 *.msm
 *.msp
-GLbot.sln
-GLbot/GLbot.vcxproj
-GLbot/GLbot.vcxproj.filters
