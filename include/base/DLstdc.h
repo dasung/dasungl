@@ -5,9 +5,8 @@
  *
  *  @param [in] nptr null-terminated char string
  *
- *  @return integer value of nptr
+ *  @return integer value of the DLchar* value given
  *
- *  @note returns the integer value of the DLchar* value given
  */
 
 DLsint32
