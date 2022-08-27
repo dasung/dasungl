@@ -21,7 +21,10 @@
     <ClInclude Include="..\..\include\base\DLtypes.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\src\base\stdafx.h">
+    <ClInclude Include="..\..\include\base\DLpointer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\base\stdafx.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

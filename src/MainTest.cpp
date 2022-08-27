@@ -1,4 +1,5 @@
 #include <DLstdc.h>
+#include <DLpointer.h>
 
 
 int main()
@@ -7,4 +8,5 @@ int main()
 	int test_x = Dstdc_atoi( x );
 	std::cout << test_x << std::endl;
 
+	check_smart_ptr();
 }

@@ -66,9 +66,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\include\base\DLpointer.h" />
     <ClInclude Include="..\..\include\base\DLstdc.h" />
     <ClInclude Include="..\..\include\base\DLtypes.h" />
-    <ClInclude Include="..\..\src\base\stdafx.h" />
+    <ClInclude Include="..\..\include\base\stdafx.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\src\base\DLstdc.cpp" />

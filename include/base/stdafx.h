@@ -6,6 +6,7 @@
 #pragma once
 
 #include <algorithm>
+#include <memory>
 #include <cassert>
 #include <fstream>
 #include <iomanip>

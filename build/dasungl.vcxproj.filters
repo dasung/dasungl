@@ -24,13 +24,13 @@
     <ClCompile Include="..\ext\include\glad.c">
       <Filter>Source Files\GLAD</Filter>
     </ClCompile>
-    <ClCompile Include="..\src\Main.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="..\src\DGLWindow.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="..\src\MainTest.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
