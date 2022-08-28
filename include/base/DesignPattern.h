@@ -49,6 +49,10 @@ void ThreadFoo()
 	std::this_thread::sleep_for(std::chrono::milliseconds(1000));
     Singleton* singleton = Singleton::GetInstance("FOO");
     std::cout << singleton->Value() << "\n";
+	Singleton* singleton1 = Singleton::GetInstance("YAKK");
+	std::cout << singleton1->Value() << "\n";
+
+	singleton1 = singleton;
 }
 
 void ThreadBar(){
@@ -57,3 +61,42 @@ void ThreadBar(){
     Singleton* singleton = Singleton::GetInstance("BAR");
     std::cout << singleton->Value() << "\n";
 }
+
+class Logistic {
+
+public:
+	virtual ~Logistic() {
+	}
+	virtual std::string Operation() const = 0;
+};
+
+class Truck : public Logistic {
+
+public:
+	std::string Operation() const {
+		return "Deliver by Land in a box";
+	}
+};
+
+class Ship : public Logistic {
+
+public:
+	std::string Operation() const {
+		return "Deliver by Sea in a containder";
+	}
+};
+
+class DilverFactory : public Truck, Ship  {
+
+public:
+	virtual ~DilverFactory(){
+	}
+
+	Logistic* DilverMethod(int type){
+		if( type == 0 )
+			return new Truck();
+		else
+			return new Ship();
+	}
+
+};

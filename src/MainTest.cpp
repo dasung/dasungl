@@ -23,4 +23,9 @@ int main()
     t1.join();
     t2.join();
 
+// Factory method demo
+	DilverFactory *dilver = new DilverFactory();
+	std::cout << dilver->DilverMethod(1)->Operation() << std::endl;
+	std::cout << dilver->DilverMethod(0)->Operation() << std::endl;
+
 }
