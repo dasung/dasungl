@@ -47,3 +47,20 @@ void Derived::func4()
 {
 	std::cout << "Derived func4 calls anyway\n";
 }
+
+
+/*///////////////////////////////////////////////////////////////////////////////////////
+  ///////////////////////////////CALL BaseClass's NON VIRTUAL FUNCTIONS//////////////////
+  ///////////////////////////////////////////////////////////////////////////////////////
+*/
+
+class DerivedDemo: public Base
+{
+public:
+	using Base::func4; // make all things in Base named func4
+
+	virtual void func5()
+	{
+		std::cout << "DerivedDemo func5 calls anyway\n";
+	}
+};

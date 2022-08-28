@@ -51,5 +51,9 @@ int main()
 	obj2->func4("Because 'virtual' is missing...");
 	obj3->func4();
 
-	delete obj1, obj2, obj3;
+	DerivedDemo *obj4 = new DerivedDemo();
+	obj4->func5();
+	obj4->func4("Just called using Derived class instance type...");
+
+	delete obj1, obj2, obj3, obj4;
 }
