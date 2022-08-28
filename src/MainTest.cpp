@@ -62,4 +62,8 @@ int main()
 	PointerDemo p;
 	char *buffer = "Hello world!";
 	std::cout << p.FindBUfferLength( buffer ) << std::endl;
+
+	p.MakeMemoryLeak();
+	_CrtDumpMemoryLeaks();
+	
 }
