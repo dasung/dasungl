@@ -33,6 +33,9 @@
     <ClInclude Include="..\..\include\base\VirtualDemo.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\include\base\PointeDemo.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\src\base\DLstdc.cpp">
