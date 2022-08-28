@@ -3,6 +3,7 @@
 // Tutorial
 #include <DLpointer.h>
 #include "DesignPattern.h"
+#include "VirtualDemo.h"
 
 int main()
 {
@@ -30,9 +31,25 @@ int main()
 	delete dilver;*/
 
 // Template method demo
-	SubClass1 *subclass1_ = new SubClass1();
+	/*SubClass1 *subclass1_ = new SubClass1();
 	ClientCode(subclass1_);
 	std::cout << std::endl;
 	SubClass2 *subclass2_ = new SubClass2();
-	ClientCode(subclass2_);
+	ClientCode(subclass2_);*/
+
+// Virtual demo
+	Base *obj1 = new Base();
+	Base *obj2 = new Derived();
+	Derived *obj3 = new Derived();
+
+	obj1->func2();
+	obj2->func2();
+	
+	obj3->func1();
+
+	obj1->func4("");
+	obj2->func4("Because 'virtual' is missing...");
+	obj3->func4();
+
+	delete obj1, obj2, obj3;
 }

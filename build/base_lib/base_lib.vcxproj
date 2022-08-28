@@ -71,6 +71,7 @@
     <ClInclude Include="..\..\include\base\DLstdc.h" />
     <ClInclude Include="..\..\include\base\DLtypes.h" />
     <ClInclude Include="..\..\include\base\stdafx.h" />
+    <ClInclude Include="..\..\include\base\VirtualDemo.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\src\base\DLstdc.cpp" />
