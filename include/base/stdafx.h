@@ -12,6 +12,7 @@
 #include <iomanip>
 #include <iostream>
 #include <map>
+#include <list>
 #include <set>
 #include <sstream>
 #include <sys/stat.h>
