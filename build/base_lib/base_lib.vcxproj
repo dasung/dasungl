@@ -66,6 +66,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\include\base\CopyConstructDemo.h" />
     <ClInclude Include="..\..\include\base\DesignPattern.h" />
     <ClInclude Include="..\..\include\base\DLpointer.h" />
     <ClInclude Include="..\..\include\base\DLstdc.h" />

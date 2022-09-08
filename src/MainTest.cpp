@@ -6,6 +6,7 @@
 #include "VirtualDemo.h"
 #include "PointeDemo.h"
 #include "GraphAlgo.h"
+#include "CopyConstructDemo.h"
 
 int main()
 {
@@ -40,7 +41,7 @@ int main()
 	ClientCode(subclass2_);*/
 
 // Virtual demo
-	Base *obj1 = new Base();
+	/*Base *obj1 = new Base();
 	Base *obj2 = new Derived();
 	Derived *obj3 = new Derived();
 
@@ -57,17 +58,20 @@ int main()
 	obj4->func5();
 	obj4->func4("Just called using Derived class instance type...");
 
-	delete obj1, obj2, obj3, obj4;
+	delete obj1, obj2, obj3, obj4;*/
 
 // Pointer demo
 	/*PointerDemo p;
 	char *buffer = "Hello world!";
-	std::cout << p.FindBUfferLength( buffer ) << std::endl;
-
-	p.MakeMemoryLeak();
-	_CrtDumpMemoryLeaks();*/
+	std::cout << p.FindBUfferLength( buffer ) << std::endl;*/
 
 // Graph demo
 	//GraphAdjMatrix g1(5);
 	//GraphAdjList g2;
+
+// Copy construct DEMO
+	Line line( 10 );
+	DisplayPassByValue( line );
+
+	DisplayPassByReference( line );
 }
