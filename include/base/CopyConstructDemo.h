@@ -22,12 +22,13 @@ Line::Line(int len)
 	*ptr = len;
 }
 
+// Copy Constructor
 Line::Line( const Line &obj )
 {
 	std::cout << "Copy constructor for obj allocating ptr." << std::endl;
 	
 	ptr = new int;
-	*ptr = *obj.ptr; // copy the value
+	*ptr = ++(*obj.ptr);
 }
 
 Line::~Line()
@@ -41,7 +42,7 @@ int Line::getLength()
    return *ptr;
 }
 
-void DisplayPassByValue( Line obj )	// Copy consrtuctor is called
+void DisplayPassByValue( Line obj )		// Copy consrtuctor is called
 {
 	std::cout << "\n====value pass======" << std::endl;
 	std::cout << "Length of line : " << obj.getLength() << std::endl;
@@ -51,9 +52,13 @@ void DisplayPassByReference( Line &obj )	// Copy consrtuctor is NOT called here
 {
 	std::cout << "\n====reference pass======" << std::endl;
 	std::cout << "Length of line : " << obj.getLength() << std::endl;
-
-	std::cout << "\n====Assignment======" << std::endl;
-	Line x = obj;	// Copy consrtuctor is called
 }
 
+void DisplayAssignment( Line &obj )		// Copy consrtuctor is NOT called here
+{
+	std::cout << "\n====Assignment======" << std::endl;
+	Line x = obj;						// Copy consrtuctor is called
+
+	std::cout << "Length of line : " << obj.getLength() << std::endl;
+}
 

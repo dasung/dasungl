@@ -42,6 +42,9 @@
     <ClInclude Include="..\..\include\base\CopyConstructDemo.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\include\base\MoveConstructor.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\src\base\DLstdc.cpp">

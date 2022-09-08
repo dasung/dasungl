@@ -72,6 +72,7 @@
     <ClInclude Include="..\..\include\base\DLstdc.h" />
     <ClInclude Include="..\..\include\base\DLtypes.h" />
     <ClInclude Include="..\..\include\base\GraphAlgo.h" />
+    <ClInclude Include="..\..\include\base\MoveConstructor.h" />
     <ClInclude Include="..\..\include\base\PointeDemo.h" />
     <ClInclude Include="..\..\include\base\stdafx.h" />
     <ClInclude Include="..\..\include\base\VirtualDemo.h" />

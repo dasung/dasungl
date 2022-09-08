@@ -7,6 +7,7 @@
 #include "PointeDemo.h"
 #include "GraphAlgo.h"
 #include "CopyConstructDemo.h"
+#include "MoveConstructor.h"
 
 int main()
 {
@@ -70,8 +71,22 @@ int main()
 	//GraphAdjList g2;
 
 // Copy construct DEMO
-	Line line( 10 );
+	/*Line line( 10 );
 	DisplayPassByValue( line );
+	DisplayAssignment(line);
+	DisplayPassByReference( line );*/
 
-	DisplayPassByReference( line );
+// Move construct DEMO
+ 
+    std::vector<MoveConstructor> vec;
+    vec.push_back(MoveConstructor(10));	// Move constructor
+	std::cout << "\n********************\n";
+	vec.push_back(MoveConstructor(20)); // Move constructor
+	std::cout << "\n********************\n";
+	vec.push_back(MoveConstructor(30)); // Move constructor
+	std::cout << "\n********************\n";
+	MoveConstructor m( 44 );
+	vec.push_back( m );	// Copy constructor
+	std::cout << "\n********************\n";
+
 }
