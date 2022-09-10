@@ -1,17 +1,8 @@
 #include "stdafx.h"
 
-
-#ifdef _DEBUG
-   #ifndef DBG_NEW
-      #define DBG_NEW new ( _NORMAL_BLOCK , __FILE__ , __LINE__ )
-      #define new DBG_NEW
-   #endif
-#endif  
-
-#define _CRTDBG_MAP_ALLOC
-
-#include <stdlib.h>
-#include <crtdbg.h>
+struct Pod {
+    int x;
+};
 
 class PointerDemo
 {
@@ -29,9 +20,17 @@ public:
 		return len;
 	}
 
-	// Not sucess have to check CRT libarary usage
 	void MakeMemoryLeak()
 	{
+		// CRT report OK
+		Pod* pPod = DBG_NEW Pod;
+		pPod = DBG_NEW Pod; // Oops, leaked the original pPod!
+		delete pPod;
+
+		// CRT REPORT NG: file name line number is missing 
 		void *a = malloc(sizeof(int) * 10) ;
+		// TODO: how to write a macro like GDB_NEW to report the line that made the allocation 
+			
+		_CrtDumpMemoryLeaks();
 	}
 };

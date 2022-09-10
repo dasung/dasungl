@@ -32,7 +32,7 @@
 
 void auto_ptr_demo()
 {
-	std::cout << "\n-----auto_ptr_demo-----\n";
+	std::cout << "\n\n-----auto_ptr_demo-----\n";
 	std::auto_ptr<std::string> pSptr1(new std::string("Hello Auto Ptr"));
 	std::auto_ptr<std::string> pSptr2( pSptr1 );
 	std::auto_ptr<std::string> pSptr3 = pSptr2;
@@ -53,20 +53,24 @@ struct X
 // Resource ownership explicitly transferred to the caller
 std::unique_ptr<X> Xfactory() 
 {
-	std::cout << "\n-----unique_ptr_demo-----\n";
+	std::cout << "\n\n-----unique_ptr_demo-----\n";
 
 	std::unique_ptr<std::string> pstr1(new std::string("Hello Unique Ptr"));
 
 	// Compilar error: Copying is not allwoed
 	//std::unique_ptr<std::string> pstr2( pstr1 );
 	//std::unique_ptr<std::string> pSptr3 = pstr2.get();
+	// Use Move
+	//std::unique_ptr<std::string> pSptr3 = std::move(pstr1);
 
-	// Move allowed
+	// Get raw pointer allowed (do not delte it)
 	std::string *raw_strptr = pstr1.get();
 
-	std::cout << "\t" << *pstr1 << std::endl;
 	std::cout << "\t" << *raw_strptr << std::endl;
 
+	std::cout << "\t" << *pstr1 << std::endl;
+
+	
 	// Dynamically allocated instance
 	return std::unique_ptr<X> ( new X );
 }
@@ -81,7 +85,7 @@ public:
 
 void shared_ptr_demo()
 {
-	std::cout << "\n-----shared_ptr_demo-----\n";
+	std::cout << "\n\n-----shared_ptr_demo-----\n";
 	std::shared_ptr<A> p1(new A); 
     std::cout << p1.get() << std::endl; 
     p1->show();
@@ -105,6 +109,41 @@ void shared_ptr_demo()
     std::cout << p2.get() << std::endl;
 }
 
+void pointer_arr_use_demo()
+{
+	// default deleter calls delete[]s
+	std::unique_ptr<int[]> ptr_arr( new int[2, 3, 4, 5] ) ;
+
+	// default deleter calls delete only
+	//std::shared_ptr<int[]> share_ptr_arr( new int[2, 3, 4, 5] ) ;
+	// defines your own delete
+	//std::shared_ptr<int> share_ptr_arr_delete(new int[10],  std::default_delete<int[]>());
+}
+
+
+////////////////////Circualr Depedency Problem///////////////////////////////
+struct Person;
+
+struct Team
+{
+    std::shared_ptr<Person> goalKeeper;
+    ~Team()
+	{ 
+		std::cout<<"Team destructer called thanks to weak_ptr.\n";
+	}
+};
+
+struct Person
+{
+    std::shared_ptr<Team> team;
+	//std::weak_ptr<Team> team;
+    ~Person()
+	{
+		std::cout<<"Person destructed.\n";
+	}
+};
+
+
 void check_smart_ptr()
 {
 	auto_ptr_demo();
@@ -113,4 +152,14 @@ void check_smart_ptr()
 	Xfactory()->foo();
 
 	shared_ptr_demo();
+
+	pointer_arr_use_demo();
+
+	// week_ptr demo
+	std::cout << "\n\n-----weak_ptr_demo-----\n";
+	auto Barca = std::make_shared<Team>();
+    auto Valdes = std::make_shared<Person>();
+    
+    Barca->goalKeeper = Valdes;
+    Valdes->team = Barca;
 }

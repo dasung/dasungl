@@ -62,9 +62,11 @@ int main()
 	delete obj1, obj2, obj3, obj4;*/
 
 // Pointer demo
-	/*PointerDemo p;
+	PointerDemo p;
 	char *buffer = "Hello world!";
-	std::cout << p.FindBUfferLength( buffer ) << std::endl;*/
+	p.MakeMemoryLeak();
+
+	std::cout << p.FindBUfferLength( buffer ) << std::endl;
 
 // Graph demo
 	//GraphAdjMatrix g1(5);
@@ -78,7 +80,7 @@ int main()
 
 // Move construct DEMO
  
-    std::vector<MoveConstructor> vec;
+    /*std::vector<MoveConstructor> vec;
     vec.push_back(MoveConstructor(10));	// Move constructor
 	std::cout << "\n********************\n";
 	vec.push_back(MoveConstructor(20)); // Move constructor
@@ -87,6 +89,6 @@ int main()
 	std::cout << "\n********************\n";
 	MoveConstructor m( 44 );
 	vec.push_back( m );	// Copy constructor
-	std::cout << "\n********************\n";
+	std::cout << "\n********************\n";*/
 
 }
