@@ -20,7 +20,7 @@ int main()
 	//check_smart_ptr();
 
 // Singalton demo
-/*	std::cout <<"If you see the same value, then singleton was reused (yay!\n" <<
+	/*std::cout <<"If you see the same value, then singleton was reused (yay!\n" <<
                 "If you see different values, then 2 singletons were created (booo!!)\n\n" <<
                 "RESULT:\n";   
     std::thread t1(ThreadFoo);
@@ -62,11 +62,11 @@ int main()
 	delete obj1, obj2, obj3, obj4;*/
 
 // Pointer demo
-	PointerDemo p;
+	/*PointerDemo p;
 	char *buffer = "Hello world!";
 	p.MakeMemoryLeak();
 
-	std::cout << p.FindBUfferLength( buffer ) << std::endl;
+	std::cout << p.FindBUfferLength( buffer ) << std::endl;*/
 
 // Graph demo
 	//GraphAdjMatrix g1(5);

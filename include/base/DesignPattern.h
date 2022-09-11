@@ -7,28 +7,32 @@
 /*///////////////////////////////////////////////////////////////////////////////////////
   ////////////////////////////////////SINGLETON DEMO/////////////////////////////////////
   ///////////////////////////////////////////////////////////////////////////////////////
+  1. Defines the `GetInstance` method 
+  2. Lets clients access the same instance of this class over and over.
 */
 
 class Singleton
 {
-protected:
-	std::string value_;
-
-	Singleton(const std::string value) : value_(value)
-	{
-	}
 private:
+	std::string value_;
     static std::mutex mutex_;
 	static Singleton* singleton_;
 
+	// Make constructor always private and privent object creation with new
+	Singleton(const std::string value) : value_(value)
+	{
+	}
+
+
 public:
 
-    // Singletons should not be cloneable.
-    Singleton(Singleton &other);
+    // Disallow object clone using copy constructor 
+	Singleton(Singleton &other) {};
 
-    // Singletons should not be assignable.
-    Singleton operator=(const Singleton &);
+    // Disallow object assignment
+	Singleton operator=(const Singleton &) {};
 
+	// static method that controls the access to the singleton instance
 	static Singleton *GetInstance(const std::string& value);
 
 	std::string Value() const{
@@ -74,7 +78,8 @@ void ThreadBar(){
   alter the type of objects that will be created.
   1. Defines interface with peo virtual function
   2. Sub-class implements peo-virtual function in own way
-  3. 
+  3. Create fatory class to generate objects based on given information
+  4. Use this factory to get objects of concrete class
 */
 
 class Logistic 
@@ -127,12 +132,14 @@ public:
   /// defines the skeleton of an algorithm in the superclass but lets subclasses override 
   specific steps of the algorithm without changing its structure.
 
-  1. Abstract class defines a TemplateMethod() with Algorotham
-  2. AbstractClass should have two peo virtual functions
-  3. Subclass should implement those two operation in own way
+  1. Abstract class defines a TemplateMethod() function with Algorotham
+  2. TemplateMethod() function has some peo virtual functions
+  3. Subclass should implement those peo virtual functions in own way
   4. write Client Method to call TemplateMethod() function
   5. main() calss Client code with needed sub class instance using Polymorphisum 
 */
+
+
 
 class AbstractClass 
 {
